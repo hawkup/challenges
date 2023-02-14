@@ -22,7 +22,13 @@
 
 /* _____________ Your Code Here _____________ */
 
-type MyAwaited<T> = any
+// use "any" because "arg" type on "type T" is number (arg in PromiseLike is generic type)
+type MyAwaited<T extends PromiseLike<any>> =
+  T extends PromiseLike<infer P>
+  ? P extends PromiseLike<unknown>
+    ? MyAwaited<P>
+    : P
+  : never
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
