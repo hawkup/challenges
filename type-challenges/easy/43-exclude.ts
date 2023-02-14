@@ -20,7 +20,9 @@
 
 /* _____________ Your Code Here _____________ */
 
-type MyExclude<T, U> = any
+type MyExclude<T, U> = T extends U ? never : T
+
+// NOTE: https://mariusschulz.com/blog/conditional-types-in-typescript#distributive-conditional-types
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
