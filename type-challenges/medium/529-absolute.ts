@@ -19,7 +19,12 @@
 
 /* _____________ Your Code Here _____________ */
 
-type Absolute<T extends number | string | bigint> = any
+type Absolute<T extends number | string | bigint> =
+  `${T}` extends `${infer Head}${infer Tail}`
+  ? Head extends '-'
+    ? Tail
+    : `${T}`
+  : `${T}`
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
