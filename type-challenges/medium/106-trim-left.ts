@@ -18,7 +18,12 @@
 
 /* _____________ Your Code Here _____________ */
 
-type TrimLeft<S extends string> = any
+type TrimLeft<S extends string> =
+  S extends `${infer L}${infer R}`
+  ? L extends ' ' | '\n' | '\t'
+    ? TrimLeft<R>
+    : S
+  : ''
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
