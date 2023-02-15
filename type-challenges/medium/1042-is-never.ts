@@ -23,7 +23,9 @@
 
 /* _____________ Your Code Here _____________ */
 
-type IsNever<T> = any
+type IsNever<T> = [T] extends [never] ? true : false
+
+// https://github.com/microsoft/TypeScript/issues/27418
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
