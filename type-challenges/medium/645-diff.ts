@@ -12,7 +12,14 @@
 
 /* _____________ Your Code Here _____________ */
 
-type Diff<O, O1> = any
+type Diff<O, O1> = {
+  [P in keyof (O & O1)
+    as P extends keyof O
+      ? P extends keyof O1
+        ? never
+        : P
+      :P]: (O & O1)[P]
+}
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
