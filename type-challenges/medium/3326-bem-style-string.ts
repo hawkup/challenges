@@ -16,7 +16,14 @@
 
 /* _____________ Your Code Here _____________ */
 
-type BEM<B extends string, E extends string[], M extends string[]> = any
+type BEM<B extends string, E extends string[], M extends string[]> =
+  E[number] extends never
+    ? M[number] extends never
+      ? B
+      : `${B}--${M[number]}`
+    : M[number] extends never
+      ? `${B}__${E[number]}`
+      : `${B}__${E[number]}--${M[number]}`
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
