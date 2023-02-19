@@ -18,7 +18,10 @@
 
 /* _____________ Your Code Here _____________ */
 
-type DropChar<S, C> = any
+type DropChar<S extends string, C extends string> =
+  S extends `${infer Head}${C}${infer Tail}`
+    ? DropChar<`${Head}${Tail}`, C>
+    : S
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
