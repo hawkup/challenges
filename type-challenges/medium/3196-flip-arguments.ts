@@ -20,8 +20,14 @@
 */
 
 /* _____________ Your Code Here _____________ */
+type Reverse<T extends readonly unknown[]> = T extends [infer Head, ... infer Tail]
+  ? [... Reverse<Tail>, Head]
+  : T
 
-type FlipArguments<T> = any
+type FlipArguments<T extends (...args: any[]) => unknown> =
+  T extends (...args: infer U) => infer V
+    ? (...args: Reverse<U>) => V
+    : never
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
