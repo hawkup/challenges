@@ -25,7 +25,7 @@
 
 
 
-type ObjectEntries<T> = {
+type ObjectEntries<T extends Record<string, any>> = {
   [P in keyof T as number]: [
       P,
       T[P] extends undefined
