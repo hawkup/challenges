@@ -23,7 +23,16 @@
 
 /* _____________ Your Code Here _____________ */
 
-type ObjectEntries<T> = any
+
+
+type ObjectEntries<T> = {
+  [P in keyof T as number]: [
+      P,
+      T[P] extends undefined
+        ? undefined
+        : Exclude<T[P], undefined >
+    ]
+}[number]
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
