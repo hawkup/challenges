@@ -80,7 +80,7 @@ ID|Challenge|Solve|Note|
 4484|IsTuple|||
 4449|Chunk|||
 4518|Fill|||
-4803|Trim Right|||
+4803|Trim Right|:heavy_check_mark:||
 5117|Without|||
 5140|Trunc|||
 5153|IndexOf|||
