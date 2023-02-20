@@ -88,7 +88,7 @@ ID|Challenge|Solve|Note|
 5317|LastIndexOf|||
 5360|Unique|||
 5821|MapTypes|||
-7544|Construct Tuple|||
+7544|Construct Tuple|:heavy_check_mark:||
 8640|Number Range|||
 8767|Combination|||
 8987|Subsequence|||
