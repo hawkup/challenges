@@ -18,7 +18,14 @@
 
 /* _____________ Your Code Here _____________ */
 
-type Trunc = any
+type TruncString<T extends string, R extends string = ''> =
+  T extends `${infer Head}${infer Tail}`
+    ? Head extends '.'
+      ? R
+      : TruncString<Tail, `${R}${Head}`>
+    : R
+
+type Trunc<T extends number | string> = TruncString<`${T}`>
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'

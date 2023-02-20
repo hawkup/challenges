@@ -82,7 +82,7 @@ ID|Challenge|Solve|Note|
 4518|Fill|||
 4803|Trim Right|:heavy_check_mark:||
 5117|Without|||
-5140|Trunc|||
+5140|Trunc|:heavy_check_mark:||
 5153|IndexOf|||
 5310|Join|||
 5317|LastIndexOf|||
