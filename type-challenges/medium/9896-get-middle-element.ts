@@ -22,7 +22,12 @@
 
 /* _____________ Your Code Here _____________ */
 
-type GetMiddleElement<T> = any
+type GetMiddleElement<T extends readonly unknown[]> =
+  T extends [infer Head, ... infer Middle, infer Tail]
+    ? Middle extends []
+      ? T
+      : GetMiddleElement<Middle>
+    : T
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'

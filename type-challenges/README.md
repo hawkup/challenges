@@ -93,7 +93,7 @@ ID|Challenge|Solve|Note|
 8767|Combination|||
 8987|Subsequence|||
 9286|FirstUniqueCharIndex|||
-9896|GetMiddleElement|||
+9896|GetMiddleElement|:heavy_check_mark:|[infer Head, ... infer Middle, infer Tail]|
 10969|Integer|||
 16259|ToPrimitive|||
 17973|DeepMutable|||
