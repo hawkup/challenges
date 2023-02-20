@@ -76,7 +76,7 @@ ID|Challenge|Solve|Note|
 4182|Fibonnaci Sequence|||
 4260|AllCombinations|||
 4425|Greater Than|||
-4471|Zip|||
+4471|Zip|:heavy_check_mark:||
 4484|IsTuple|||
 4449|Chunk|||
 4518|Fill|||
