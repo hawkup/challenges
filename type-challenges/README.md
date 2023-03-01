@@ -68,7 +68,7 @@ ID|Challenge|Solve|Note|
 2852|OmitByType|:heavy_check_mark:||
 2946|ObjectEntries|:heavy_check_mark:| T[P] extends undefined vs undefined extends T[P] (unknown is a infinite union (union of all types)) |
 3062|Shift|:heavy_check_mark:||
-3188|Tuple to Nested Object|||
+3188|Tuple to Nested Object|:heavy_check_mark:|{ [k in K]: U } (K is tuple), infer something extends string |
 3192|Reverse|:heavy_check_mark:||
 3196|Flip Arguments|:heavy_check_mark:||
 3243|FlattenDepth|||

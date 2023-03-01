@@ -18,8 +18,12 @@
 
 /* _____________ Your Code Here _____________ */
 
-type TupleToNestedObject<T, U> = any
-
+type TupleToNestedObject<T extends readonly PropertyKey[], U> =
+  T extends [infer Head extends PropertyKey, ... infer Tail extends readonly PropertyKey[]]
+    ? {
+      [P in Head]: TupleToNestedObject<Tail, U>
+    }
+    : U
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
 
